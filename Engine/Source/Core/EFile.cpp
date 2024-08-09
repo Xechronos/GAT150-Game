@@ -34,7 +34,7 @@ bool File::ReadFile(const std::string& filepath, std::string& buffer)
 		return false;
 	}
 	std::ifstream stream(filepath, std::ios::in);
-	if (stream.is_open()) {
+	if (!stream.is_open()) {
 		std::cerr << "Could not open file: " << filepath << std::endl;
 		return false;
 	}
