@@ -4,6 +4,7 @@
 #include<string>
 #include <vector>
 #include <memory>
+#include <functional>
 
 class Renderer;
 class Scene;
@@ -11,39 +12,73 @@ class Scene;
 class Actor : public Object{
 public:
 	Actor() = default;
-	Actor(const Transform& transform) : m_transform{ transform } {}
+	Actor(const Transform& transform) : transform{ transform } {}
+
+	CLASS_DECLARATION(Actor)
 
 	void Initialize() override;
 	virtual void Update(float dt);
 	virtual void Draw(Renderer& renderer);
 
+	std::function<void(Actor*)> OnCollisionEnter;
+
 	void AddComponent(std::unique_ptr<Component> component);
 
-	void SetDamping(float damping) { m_damping = damping; }
-	void SetLifespan(float lifespan) { m_lifespan = lifespan; }
+	template<typename T> T* GetComponent();
+	template<typename T> T* GetComponent(const std::string& name);
+	template<typename T> std::vector<T*> GetComponents();
 
-	const Transform& GetTransform() { return m_transform; }
-
-	void SetTag(const std::string tag) { m_tag = tag; }
-	const std::string GetTag() { return m_tag; }
 
 	virtual void OnCollision(Actor* actor) {}
 
 	friend class Scene;
 
+public:
+	std::string tag;
+	float lifespan = 0.0f;
+	bool destroyed = false;
+	Transform transform;
+	Scene* scene{ nullptr };
 
 protected:
-	std::string m_tag;
-	Transform m_transform;
-	Vector2 m_velocity{ 0,0 };
-
-	bool m_destroyed = false;
-	float m_lifespan = 0;
-	float m_damping{ 0 };
-
-	Scene* m_scene{ nullptr };
-
-	std::vector<std::unique_ptr<Component>> m_components;
+	std::vector<std::unique_ptr<Component>> components;
 
 };
 
+template<typename T>
+inline T* Actor::GetComponent()
+{
+	for (auto& component : components)
+	{
+		T* result = dynamic_cast<T*>(component.get());
+		if (result) return result;
+	}
+	return nullptr;
+}
+
+template<typename T>
+inline T* Actor::GetComponent(const std::string& name)
+{
+	for (auto& component : components)
+	{
+		T* result = dynamic_cast<T*>(component.get());
+		if (result && IsEqualIgnoreCase(name, result->name)) return result;
+	}
+	return nullptr;
+}
+
+template<typename T>
+
+inline std::vector<T*> Actor::GetComponents()
+{
+	std::vector<T*> results;
+	for (auto& component : components)
+	{
+		T* result = dynamic_cast<T*>(component.get());
+		if (result) results.push_back(result);
+	}
+	return results;
+}
+
+
+	

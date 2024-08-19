@@ -4,10 +4,13 @@
 #include "Renderer/Renderer.h"
 #include <string>
 
+struct SDL_Texture;
+
 class Texture : public Resource
 {
 public:
 	Texture() = default;
+	Texture(SDL_Texture* texture) : m_texture{ texture } {}
 	~Texture();
 
 	// Inherited via Resource
@@ -19,6 +22,6 @@ public:
 	friend class Renderer;
 
 private:
-	struct SDL_Texture* m_texture{ nullptr };
+	SDL_Texture* m_texture { nullptr };
 
 };

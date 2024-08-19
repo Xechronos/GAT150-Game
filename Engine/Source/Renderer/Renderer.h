@@ -1,9 +1,11 @@
 #pragma once
+#include "Texture.h"
 #include <SDL.h>
 #include <string>
 #include <SDL_ttf.h>
 #include <SDL_image.h>
-#include "Texture.h"
+#include <memory>
+
 
 class Renderer {
 public:
@@ -30,7 +32,8 @@ public:
 
 	friend class Text;
 	friend class Texture;
-	void DrawTexture(Texture* texture, float x, float y, float angle);
+	void DrawTexture(std::weak_ptr<class Texture> texture, float x, float y, float angle = 0);
+	void DrawTexture(std::weak_ptr<class Texture> texture, const struct Transform& transfrom, bool hflip = false);
 
 private:
 	SDL_Window* m_window{ nullptr };

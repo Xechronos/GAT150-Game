@@ -20,13 +20,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Audio\Audio.h" />
+    <ClInclude Include="Source\Components\CircleCollisionComp.h" />
+    <ClInclude Include="Source\Components\CollisionComp.h" />
     <ClInclude Include="Source\Components\Component.h" />
+    <ClInclude Include="Source\Components\EnginePhyComp.h" />
+    <ClInclude Include="Source\Components\PhysicsComp.h" />
     <ClInclude Include="Source\Components\RenderComp.h" />
+    <ClInclude Include="Source\Components\TextComp.h" />
     <ClInclude Include="Source\Components\TextureComp.h" />
     <ClInclude Include="Source\Core\EAssert.h" />
     <ClInclude Include="Source\Core\EFile.h" />
+    <ClInclude Include="Source\Core\EString.h" />
     <ClInclude Include="Source\Core\ETime.h" />
+    <ClInclude Include="Source\Core\Factory.h" />
     <ClInclude Include="Source\Core\json.h" />
+    <ClInclude Include="Source\Core\Serializable.h" />
     <ClInclude Include="Source\Core\Singleton.h" />
     <ClInclude Include="Source\Engine.h" />
     <ClInclude Include="Source\Framework\Actor.h" />
@@ -50,15 +58,22 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Audio\Audio.cpp" />
+    <ClCompile Include="Source\Components\CircleCollisionComp.cpp" />
+    <ClCompile Include="Source\Components\EnginePhyComp.cpp" />
+    <ClCompile Include="Source\Components\PhysicsComp.cpp" />
+    <ClCompile Include="Source\Components\TextComp.cpp" />
     <ClCompile Include="Source\Components\TextureComp.cpp" />
     <ClCompile Include="Source\Core\EAssert.cpp" />
     <ClCompile Include="Source\Core\EFile.cpp" />
+    <ClCompile Include="Source\Core\EString.cpp" />
     <ClCompile Include="Source\Core\ETime.cpp" />
     <ClCompile Include="Source\Core\json.cpp" />
     <ClCompile Include="Source\Engine.cpp" />
     <ClCompile Include="Source\Framework\Actor.cpp" />
+    <ClCompile Include="Source\Framework\Object.cpp" />
     <ClCompile Include="Source\Framework\Scene.cpp" />
     <ClCompile Include="Source\Input\Input.cpp" />
+    <ClCompile Include="Source\Math\Transform.cpp" />
     <ClCompile Include="Source\Renderer\Font.cpp" />
     <ClCompile Include="Source\Renderer\Model.cpp" />
     <ClCompile Include="Source\Renderer\Particles.cpp" />
@@ -68,7 +83,7 @@
     <ClCompile Include="Source\Renderer\Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\Build\Assets\text.txt" />
+    <None Include="cpp.hint" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -139,7 +154,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>sdl2main.lib;sdl2.lib</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTarget);$(SolutionDir)ThirdParty\fmod\core\lib\$(PlatformTarget)</AdditionalLibraryDirectories>
@@ -166,7 +181,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>sdl2main.lib;sdl2.lib</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTarget);$(SolutionDir)ThirdParty\fmod\core\lib\$(PlatformTarget)</AdditionalLibraryDirectories>
@@ -189,7 +204,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>sdl2main.lib;sdl2.lib</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTarget);$(SolutionDir)ThirdParty\fmod\core\lib\$(PlatformTarget)</AdditionalLibraryDirectories>
@@ -216,7 +231,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>sdl2main.lib;sdl2.lib</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\SDL2\lib\$(PlatformTarget);$(SolutionDir)ThirdParty\fmod\core\lib\$(PlatformTarget)</AdditionalLibraryDirectories>

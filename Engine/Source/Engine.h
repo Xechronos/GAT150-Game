@@ -3,6 +3,8 @@
 #include "Core/EFile.h"
 #include "Core/ETime.h"
 #include "Core/json.h"
+#include "Core/Factory.h"
+#include "Core/EString.h"
 
 #include "Renderer/Renderer.h"
 #include "Renderer/Particles.h"
@@ -22,6 +24,8 @@
 #include "Math/Transform.h"
 
 #include "Components/TextureComp.h"
+#include "Components/EnginePhyComp.h"
+#include "Components/TextComp.h"
 
 #include "Framework/Actor.h"
 #include "Framework/Scene.h"

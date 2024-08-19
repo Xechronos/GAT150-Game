@@ -1,0 +1,82 @@
+{
+    "actors": [
+        {
+            "name": "Background",
+            "transform": {
+                "position": [ 0, 0 ],
+                "rotation": 0,
+                "scale": 2
+            },
+            "components": [
+                {
+                    "type": "TextureComp",
+                    "textureName": "textures/Barren_Place.png"
+                }
+            ]
+        },
+        {
+            "name": "player",
+            "transform": {
+                "position": [ 60, 60 ],
+                "rotation": 0,
+                "scale": 3
+
+            },
+
+            "components": [
+                {
+                    "type": "TextureComp",
+                    "textureName": "textures/Player.png"
+                },
+                {
+                    "type": "EnginePhyComp",
+                    "velocity": [ 0, 0 ],
+                    "damping": 0.8
+                },
+                {
+                    "type": "PlayerComp",
+                    "speed": 100
+                },
+                {
+                    "type": "CircleCollisionComp",
+                    "radius": 24
+                }
+            ]
+        },
+        {
+            "name": "enemy",
+            "transform": {
+                "position": [ 260, 360 ],
+                "rotation": 90,
+                "scale": 1
+            },
+            "components": [
+                {
+                    "type": "TextureComp",
+                    "textureName": "Textures/Enemy.png"
+                },
+                {
+                    "type": "CircleCollisionComp",
+                    "radius": 24
+                }
+            ]
+        },
+        {
+            "name": "text",
+            "transform": {
+                "position": [ 560, 360 ],
+                "rotation": 0,
+                "scale": 1
+            },
+            "components": [
+                {
+                    "fontName": "fonts/Begok.ttf",
+                    "text": "hello",
+                    "fontSize": 24,
+                    "color": [ 0, 1, 0, 1 ],
+                    "type": "TextComp"
+                }
+            ]
+        }
+    ]
+}
