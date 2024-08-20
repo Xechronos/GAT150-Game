@@ -37,6 +37,9 @@
     <Filter Include="Source Files\Components">
       <UniqueIdentifier>{97c4e08e-b4c5-43db-800d-a3e45186399a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Physics">
+      <UniqueIdentifier>{bab2b0e9-6dfa-419a-994a-71a7c86eeb40}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Resources\Resource.h">
@@ -147,6 +150,9 @@
     <ClInclude Include="Source\Components\CircleCollisionComp.h">
       <Filter>Source Files\Components</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Physics\Physics.h">
+      <Filter>Source Files\Physics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine.cpp">
@@ -220,6 +226,9 @@
     </ClCompile>
     <ClCompile Include="Source\Components\CircleCollisionComp.cpp">
       <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Physics\Physics.cpp">
+      <Filter>Source Files\Physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

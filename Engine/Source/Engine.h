@@ -33,6 +33,8 @@
 #include "Resources/Resource.h"
 #include "Resources/ResourceManager.h"
 
+#include "Physics/Physics.h"
+
 #include <SDL.h>
 #include <fmod.hpp>
 
@@ -51,6 +53,9 @@ public:
 	Input& GetInput() { return *m_input; }
 	Audio& GetAudio() { return *m_audio; }
 	ParticleSystem& GetPS() { return *m_particleSystem; }
+
+	Physics& GetPhysics() { return *m_physics; }
+	std::unique_ptr<Physics> m_physics;
 
 	Time& GetTime() { return *m_time; }
 
