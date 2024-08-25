@@ -4,6 +4,7 @@
 class CircleCollisionComp : public CollisionComp {
 public:
 	CLASS_DECLARATION(CircleCollisionComp);
+	CLASS_PROTOTYPE(CircleCollisionComp);
 
 	// Inherited via CollisionComp
 	void Initialize() override;

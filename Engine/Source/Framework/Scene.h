@@ -10,16 +10,19 @@ class Engine;
 
 class Scene : public Object {
 public:
+	Scene() = default;
 	Scene(Engine* engine, Game* game = nullptr) : game{ game }, engine{ engine } {}
+	Scene(const Scene& other);
 
-	CLASS_DECLARATION(Scene);
+	CLASS_DECLARATION(Scene)
+	CLASS_PROTOTYPE(Scene)
 	// Inherited via Object
 	void Initialize() override;
 
 	void Update(float dt);
 	void Draw(Renderer& renderer);
 
-	void AddActor(std::unique_ptr<Actor> actor);
+	void AddActor(std::unique_ptr<Actor> actor, bool initialize = false);
 
 	template<typename T> T* GetActor();
 	template<typename T> T* GetActor(const std::string& name);

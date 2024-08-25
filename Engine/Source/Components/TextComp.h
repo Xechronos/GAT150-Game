@@ -3,7 +3,11 @@
 
 class TextComp : public RenderComp {
 public:
+	TextComp() = default;
+	TextComp(const TextComp& other);
+
 	CLASS_DECLARATION(TextComp);
+	CLASS_PROTOTYPE(TextComp);
 
 	// Inherited via RenderComp
 	void Initialize() override;

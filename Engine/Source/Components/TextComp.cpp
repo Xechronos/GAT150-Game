@@ -7,6 +7,25 @@
 
 FACTORY_REGISTER(TextComp)
 
+void TextComp::Initialize()
+{
+	if (!m_text && !fontName.empty()) {
+		auto font = ResourceManager::Instance().Get<Font>(fontName, fontSize);
+		m_text = std::make_unique<Text>(font);
+	}
+}
+
+TextComp::TextComp(const TextComp& other)
+{
+	text = other.text;
+	fontName = other.fontName;
+	fontSize = other.fontSize;
+	color = other.color;
+
+	textChanged = true;
+	m_text = std::make_unique<Text>(*other.m_text.get());
+}
+
 void TextComp::Read(const json_t& value)
 {
 	READ_DATA(value, text);
@@ -19,13 +38,6 @@ void TextComp::Write(json_t& value)
 {
 }
 
-void TextComp::Initialize()
-{
-	if (!fontName.empty()) {
-		auto font = ResourceManager::Instance().Get<Font>(fontName, fontSize);
-		m_text = std::make_unique<Text>(font);
-	}
-}
 
 void TextComp::Update(float dt)
 {

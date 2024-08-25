@@ -3,7 +3,7 @@
         {
             "name": "Background",
             "transform": {
-                "position": [ 0, 0 ],
+                "position": [ 400, 300 ],
                 "rotation": 0,
                 "scale": 2
             },
@@ -29,17 +29,15 @@
                     "textureName": "textures/Player.png"
                 },
                 {
-                    "type": "EnginePhyComp",
-                    "velocity": [ 0, 0 ],
-                    "damping": 0.8
+                    "type": "Box2DPhysicsComponent",
+                    "size": [ 32, 32 ],
+                    "angularDamping": 0.8,
+                    "gravityScale": 0,
+                    "damping": 0.0
                 },
                 {
                     "type": "PlayerComp",
-                    "speed": 100
-                },
-                {
-                    "type": "CircleCollisionComp",
-                    "radius": 24
+                    "speed": 200
                 }
             ]
         },
@@ -56,25 +54,36 @@
                     "textureName": "Textures/Enemy.png"
                 },
                 {
-                    "type": "CircleCollisionComp",
-                    "radius": 24
+                    "type": "Box2DPhysicsComponent",
+                    "size": [ 32, 32 ],
+                    "gravityScale": 0,
+                    "damping": 0.0
                 }
             ]
         },
         {
-            "name": "text",
+            "name": "rocket",
+            "prototype": true,
             "transform": {
-                "position": [ 560, 360 ],
+                "position": [ 400, 300 ],
                 "rotation": 0,
                 "scale": 1
             },
             "components": [
                 {
-                    "fontName": "fonts/Begok.ttf",
-                    "text": "hello",
-                    "fontSize": 24,
-                    "color": [ 0, 1, 0, 1 ],
-                    "type": "TextComp"
+                    "type": "TextureComp",
+                    "textureName": "textures/rocket.png"
+                },
+                {
+                    "type": "RocketComp",
+                    "speed": 400
+                },
+                {
+                    "type": "Box2DPhysicsComponent",
+                    "size": [ 32, 16 ],
+                    "gravityScale": 0,
+                    "isSensor": true,
+                    "damping": 0.0
                 }
             ]
         }

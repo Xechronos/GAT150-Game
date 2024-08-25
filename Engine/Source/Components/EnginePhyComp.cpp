@@ -38,3 +38,8 @@ void EnginePhyComp::SetPosition(const Vector2& position)
 {
 	owner->transform.position = position;
 }
+
+void EnginePhyComp::ApplyTorque(float angle)
+{
+	owner->transform.rotation += angle;
+}

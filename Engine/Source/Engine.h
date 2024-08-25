@@ -35,6 +35,8 @@
 
 #include "Physics/Physics.h"
 
+#include "Event/EventSystem.h"
+
 #include <SDL.h>
 #include <fmod.hpp>
 
