@@ -16,6 +16,10 @@ Box2DPhysicsComponent::Box2DPhysicsComponent(const Box2DPhysicsComponent& other)
 void Box2DPhysicsComponent::Initialize()
 {
 	rigidBodyDef.actor = owner;
+	if (size.x == 0 && size.y == 0) {
+		auto textureComp = owner->GetComponent<TextureComp>();
+		size = {textureComp->source.w, textureComp->source.h};
+	}
 	m_rigidBody = std::make_unique<RigidBody>(owner->transform, size, rigidBodyDef, owner->scene->engine->GetPhysics());
 }
 

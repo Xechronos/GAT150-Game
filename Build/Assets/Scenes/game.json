@@ -1,0 +1,45 @@
+{
+    "actors": [
+        {
+            "name": "Background",
+            "transform": {
+                "position": [ 400, 300 ],
+                "rotation": 0,
+                "scale": 2
+            },
+            "components": [
+                {
+                    "type": "TextureComp",
+                    "textureName": "textures/Barren_Place.png"
+                }
+            ]
+        },
+        {
+            "name": "player",
+            "transform": {
+                "position": [ 60, 60 ],
+                "rotation": 0,
+                "scale": 3
+
+            },
+
+            "components": [
+                {
+                    "type": "TextureComp",
+                    "textureName": "textures/Player.png"
+                },
+                {
+                    "type": "Box2DPhysicsComponent",
+                    "size": [ 32, 32 ],
+                    "angularDamping": 0.8,
+                    "gravityScale": 1,
+                    "damping": 0.0,
+                    "constrainAngle": true
+                },
+                {
+                    "type": "CharacterComp",
+                    "speed": 200
+                }
+            ]
+        }
+}

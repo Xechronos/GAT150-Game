@@ -29,6 +29,7 @@
     <ClInclude Include="Source\Components\RenderComp.h" />
     <ClInclude Include="Source\Components\TextComp.h" />
     <ClInclude Include="Source\Components\TextureComp.h" />
+    <ClInclude Include="Source\Components\TileMapComp.h" />
     <ClInclude Include="Source\Core\EAssert.h" />
     <ClInclude Include="Source\Core\EFile.h" />
     <ClInclude Include="Source\Core\EString.h" />
@@ -44,6 +45,7 @@
     <ClInclude Include="Source\Framework\Actor.h" />
     <ClInclude Include="Source\Framework\Game.h" />
     <ClInclude Include="Source\Framework\Object.h" />
+    <ClInclude Include="Source\Framework\Rect.h" />
     <ClInclude Include="Source\Framework\Scene.h" />
     <ClInclude Include="Source\Input\Input.h" />
     <ClInclude Include="Source\Math\MathUtils.h" />
@@ -71,6 +73,7 @@
     <ClCompile Include="Source\Components\PhysicsComp.cpp" />
     <ClCompile Include="Source\Components\TextComp.cpp" />
     <ClCompile Include="Source\Components\TextureComp.cpp" />
+    <ClCompile Include="Source\Components\TileMapComp.cpp" />
     <ClCompile Include="Source\Core\EAssert.cpp" />
     <ClCompile Include="Source\Core\EFile.cpp" />
     <ClCompile Include="Source\Core\EString.cpp" />

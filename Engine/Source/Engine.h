@@ -22,6 +22,7 @@
 #include "Math/Random.h"
 #include "Math/MathUtils.h"
 #include "Math/Transform.h"
+#include "Math/Rect.h"
 
 #include "Components/TextureComp.h"
 #include "Components/EnginePhyComp.h"
