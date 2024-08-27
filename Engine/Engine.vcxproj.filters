@@ -180,6 +180,9 @@
     <ClInclude Include="Source\Framework\Rect.h">
       <Filter>Source Files\Math</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Components\TextureAnimationComp.h">
+      <Filter>Source Files\Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Engine.cpp">
@@ -270,6 +273,9 @@
       <Filter>Source Files\Event</Filter>
     </ClCompile>
     <ClCompile Include="Source\Components\TileMapComp.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Components\TextureAnimationComp.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
   </ItemGroup>
