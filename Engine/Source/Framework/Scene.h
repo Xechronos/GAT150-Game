@@ -27,7 +27,7 @@ public:
 	template<typename T> T* GetActor();
 	template<typename T> T* GetActor(const std::string& name);
 
-	void RemoveAll();
+	void RemoveAll(bool force = false);
 
 public:
 	Engine* engine{ nullptr };

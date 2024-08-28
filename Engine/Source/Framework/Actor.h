@@ -42,6 +42,7 @@ public:
 	bool destroyed = false;
 	Transform transform;
 	Scene* scene{ nullptr };
+	bool persistent;
 
 protected:
 	std::vector<std::unique_ptr<Component>> components;

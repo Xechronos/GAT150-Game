@@ -25,16 +25,75 @@
 
             "components": [
                 {
-                    "type": "TextureComp",
-                    "textureName": "textures/Player.png"
+                    "type": "TextureAnimationComponent",
+                    "animationName": "idle",
+                    "animations": [
+                        {
+                            "name": "idle",
+                            "fps": 7,
+                            "numColumns": 15,
+                            "numRows": 31,
+                            "startFrame": 1,
+                            "endFrame": 3,
+                            "textureName": "Textures/MegaMan.png"
+                        },
+                        {
+                            "name": "run",
+                            "fps": 12,
+                            "numColumns": 15,
+                            "numRows": 31,
+                            "startFrame": 31,
+                            "endFrame": 38,
+                            "textureName": "Textures/MegaMan.png"
+                        },
+                        {
+                            "name": "jump",
+                            "fps": 7,
+                            "numColumns": 15,
+                            "numRows": 31,
+                            "startFrame": 181,
+                            "endFrame": 184,
+                            "textureName": "Textures/MegaMan.png"
+                        }
+                    ]
+                },
+                {
+                    "name": "rocket",
+                    "prototype": true,
+                    "transform": {
+                        "position": [ 400, 300 ],
+                        "rotation": 0,
+                        "scale": 1
+                    },
+                    "components": [
+                        {
+                            "type": "TextureComp",
+                            "textureName": "textures/rocket.png"
+                        },
+                        {
+                            "type": "RocketComp",
+                            "speed": 400
+                        },
+                        {
+                            "type": "Box2DPhysicsComponent",
+                            "size": [ 32, 16 ],
+                            "gravityScale": 0,
+                            "isSensor": true,
+                            "damping": 0.0
+                        }
+                    ]
                 },
                 {
                     "type": "Box2DPhysicsComponent",
-                    "size": [ 32, 32 ],
                     "angularDamping": 0.8,
                     "gravityScale": 1,
+                    "friction": 0.2,
+                    "restitustion": 0.1,
                     "damping": 0.0,
-                    "constrainAngle": true
+                    "shape": "capsule",
+                    "constrainAngle": true,
+                    "size": [ 32, 64 ],
+                    "scale": [ 0.8, 0.6 ]
                 },
                 {
                     "type": "CharacterComp",
@@ -42,4 +101,6 @@
                 }
             ]
         }
+
+    ]
 }

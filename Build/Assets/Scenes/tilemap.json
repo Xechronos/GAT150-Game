@@ -6,48 +6,25 @@
             "name": "tile01",
             "tag": "Ground",
             "prototype": true,
+            "persistent": true,
             "transform": {
                 "scale": 2
             },
             "components": [
                 {
                     "type": "TextureComp",
-                    "textureName": "textures/tileset_32x32.png",
-                    "source": [
-                        96,
-                        416,
-                        32,
-                        32
-                    ]
-                },
-                {
-                    "type": "Box2DPhysicsComponent",
-                    "isDynamic": false
-                }
-            ]
-        },
-        {
-            "type": "Actor",
-            "name": "tile02",
-            "tag": "Ground",
-            "prototype": true,
-            "transform": {
-                "scale": 2
-            },
-            "components": [
-                {
-                    "type": "TextureComp",
-                    "textureName": "textures/tileset_32x32.png",
+                    "textureName": "textures/tiles.png",
                     "source": [
                         0,
-                        128,
-                        32,
-                        32
+                        0,
+                        16,
+                        16
                     ]
                 },
                 {
                     "type": "Box2DPhysicsComponent",
-                    "isDynamic": false
+                    "isDynamic": false,
+                    "Restitution": 0.2
                 }
             ]
         },
@@ -56,26 +33,26 @@
             "name": "World",
             "transform": {
                 "position": [
-                    32,
-                    32
+                    0,
+                    0
                 ]
             },
             "components": [
                 {
                     "type": "TileMapComp",
-                    "numColumns": 13,
-                    "numRows": 10,
-                    "tileSize": [ 64, 64 ],
-                    "tileNames": [ "", "tile01", "tile02" ],
+                    "numColumns": 6,
+                    "numRows": 9,
+                    "tileSize": [ 64, 32 ],
+                    "tileNames": [ "", "tile01" ],
                     "tiles": [
                         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                        0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0,
-                        0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 2,
-                        2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                        0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                         0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
                         ]

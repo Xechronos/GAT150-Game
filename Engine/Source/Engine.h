@@ -25,6 +25,7 @@
 #include "Math/Rect.h"
 
 #include "Components/TextureComp.h"
+#include "Components/TextureAnimationComponent.h"
 #include "Components/EnginePhyComp.h"
 #include "Components/TextComp.h"
 

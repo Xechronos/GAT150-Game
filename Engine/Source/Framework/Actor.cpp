@@ -17,6 +17,7 @@ Actor::Actor(const Actor& other)
 	tag = other.tag;
 	lifespan = other.lifespan;
 	destroyed = other.destroyed;
+	persistent = other.persistent;
 
 	transform = other.transform;
 	scene = other.scene;
