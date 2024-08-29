@@ -15,6 +15,7 @@ public:
 public:
 	std::string textureName;
 	Rect source;
+	Vector2 origin{ 0.5f, 0.5f };
 	res_t<Texture> texture;
 	bool hflip = false;
 };

@@ -26,13 +26,14 @@ void TextureComp::Update(float dt)
 void TextureComp::Draw(Renderer& renderer)
 {
 	Transform transform = owner->transform;
-	renderer.DrawTexture(texture, transform, source, hflip);
+	renderer.DrawTexture(texture, transform, source, origin, hflip);
 }
 
 void TextureComp::Read(const json_t& value)
 {
 	READ_DATA(value, textureName);
 	READ_DATA(value, source);
+	READ_DATA(value, origin);
 }
 
 void TextureComp::Write(json_t& value)

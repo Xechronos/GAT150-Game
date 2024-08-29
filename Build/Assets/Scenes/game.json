@@ -3,7 +3,10 @@
         {
             "name": "Background",
             "transform": {
-                "position": [ 400, 300 ],
+                "position": [
+                    400,
+                    300
+                ],
                 "rotation": 0,
                 "scale": 2
             },
@@ -17,16 +20,22 @@
         {
             "name": "player",
             "transform": {
-                "position": [ 60, 60 ],
+                "position": [
+                    160,
+                    60
+                ],
                 "rotation": 0,
                 "scale": 3
-
             },
-
             "components": [
                 {
+                    "type": "CharacterComp",
+                    "speed": 300
+                },
+                {
                     "type": "TextureAnimationComponent",
-                    "animationName": "idle",
+                    "animationName": "jump",
+                    "origin": [ 0.5, 0.65 ],
                     "animations": [
                         {
                             "name": "idle",
@@ -51,35 +60,9 @@
                             "fps": 7,
                             "numColumns": 15,
                             "numRows": 31,
-                            "startFrame": 181,
-                            "endFrame": 184,
+                            "startFrame": 196,
+                            "endFrame": 199,
                             "textureName": "Textures/MegaMan.png"
-                        }
-                    ]
-                },
-                {
-                    "name": "rocket",
-                    "prototype": true,
-                    "transform": {
-                        "position": [ 400, 300 ],
-                        "rotation": 0,
-                        "scale": 1
-                    },
-                    "components": [
-                        {
-                            "type": "TextureComp",
-                            "textureName": "textures/rocket.png"
-                        },
-                        {
-                            "type": "RocketComp",
-                            "speed": 400
-                        },
-                        {
-                            "type": "Box2DPhysicsComponent",
-                            "size": [ 32, 16 ],
-                            "gravityScale": 0,
-                            "isSensor": true,
-                            "damping": 0.0
                         }
                     ]
                 },
@@ -88,19 +71,119 @@
                     "angularDamping": 0.8,
                     "gravityScale": 1,
                     "friction": 0.2,
-                    "restitustion": 0.1,
+                    "restitution": 0.1,
                     "damping": 0.0,
                     "shape": "capsule",
                     "constrainAngle": true,
-                    "size": [ 32, 64 ],
-                    "scale": [ 0.8, 0.6 ]
-                },
-                {
-                    "type": "CharacterComp",
-                    "speed": 200
+                    "scale": [
+                        0.2,
+                        0.3
+                    ]
                 }
             ]
-        }
+        },
+        {
+            "name": "rocket",
+            "prototype": true,
+            "lifetime": 2,
+            "transform": {
+                "position": [
+                    400,
+                    300
+                ],
+                "rotation": 0,
+                "scale": 1
+            },
+            "components": [
+                {
+                    "type": "TextureComp",
+                    "textureName": "textures/rocket.png"
+                },
+                {
+                    "type": "RocketComp",
+                    "speed": 400
+                },
+                {
+                    "type": "Box2DPhysicsComponent",
+                    "size": [
+                        32,
+                        16
+                    ],
+                    "gravityScale": 0,
+                    "isSensor": true,
+                    "damping": 0.0
+                }
+            ]
+        },
+        {
+            "name": "enemy",
+            "tag": "enemy",
+            "prototype": true,
+            "transform": {
+                "position": [
+                    560,
+                    400
+                ],
+                "rotation": 0,
+                "scale": 1
+            },
+            "components": [
+                {
+                    "type": "EnemyComp",
+                    "speed": 200
+                },
+                {
+                    "type": "TextureAnimationComponent",
+                    "animationName": "idle",
+                    "animations": [
+                        {
+                            "name": "idle",
+                            "textureName": "textures/bat.png",
+                            "fps": 10,
+                            "loop": true,
+                            "numColumns": 4,
+                            "numRows": 1,
+                            "startFrame": 1,
+                            "endFrame": 4
+                        }
+                    ]
+                },
+                {
+                    "type": "Box2DPhysicsComponent",
+                    "damping": 0.4,
+                    "angularDamping": 0.85,
+                    "gravityScale": 0,
+                    "friction": 0.8,
+                    "density": 3.0,
+                    "constrainAngle": true,
+                    "restitution": 0.1,
+                    "shape": "circle",
+                    "isSensor": true,
+                    "scale": [
+                        0.8,
+                        0.8
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "text",
+            "prototype": true,
+            "transform": {
+                "position": [ 400, 300 ],
+                "rotation": 0,
+                "scale": 1
+            },
+            "components": [
+                {
+                    "fontName": "fonts/Begok.ttf",
+                    "text": "game over",
+                    "fontSize": 24,
+                    "color": [ 1, 0, 0, 1 ],
+                    "type": "TextComp"
+                }
 
+            ]
+        }
     ]
 }

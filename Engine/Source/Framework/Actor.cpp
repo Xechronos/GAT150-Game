@@ -14,6 +14,7 @@ void Actor::Initialize()
 
 Actor::Actor(const Actor& other)
 {
+	name = other.name;
 	tag = other.tag;
 	lifespan = other.lifespan;
 	destroyed = other.destroyed;
